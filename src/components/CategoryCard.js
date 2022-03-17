@@ -23,12 +23,9 @@ export default function CategoryCard(props) {
     if (error) return `Error! ${error}`;
 
     return (
-        <div style={{
-            display: "flex", flexDirection: "column", justifyContent: "center",
-
-        }}>
+        <div>
             <p>{props.tag}</p>
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", }}>
+            <div className="table">
                 {
                     data.websites.map(item => {
                         return <WebsiteCard key={item.name} url={item.url} name={item.name} intro={item.intro}></WebsiteCard>

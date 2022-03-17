@@ -25,12 +25,15 @@ function App() {
   if (error) return `Error! ${error}`;
   if (!data) return null;
   return (
-    <div className='container'>
-      {data.__type.enumValues.map(item => {
-        return (< CategoryCard tag={item.name}></CategoryCard>)
-      })
-      }
-    </div >
+    <div>
+      <p className='logo' href="https://twitter.com/unblock256">un.Block</p>
+      <div className='container'>
+        {data.__type.enumValues.map(item => {
+          return (< CategoryCard tag={item.name}></CategoryCard>)
+        })
+        }
+      </div >
+    </div>
   )
 }
 
