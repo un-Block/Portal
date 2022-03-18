@@ -1,9 +1,6 @@
 import './App.css';
 import CategoryCard from './components/CategoryCard.js';
 import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
   useQuery,
   gql
 } from "@apollo/client";
