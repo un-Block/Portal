@@ -21,6 +21,7 @@ export default function CategoryCard(props) {
     });
     if (loading) return null;
     if (error) return `Error! ${error}`;
+    if (data.websites.length === 0) return null;
 
     return (
         <div>
