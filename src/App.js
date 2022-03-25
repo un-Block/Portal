@@ -20,7 +20,10 @@ function App() {
   if (error) return `Error! ${error}`;
   if (!data) return null;
   return (
-    <div>
+    <div className="terminal">
+      <head>
+
+      </head>
       <div className="terminal-logo" style={{ marginLeft: "2em" }}>
         <div className="logo terminal-prompt">
           <a

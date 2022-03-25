@@ -1,13 +1,13 @@
 .container {
   display: block;
-  width: 100%;
+  width: 80%;
   margin: 2em auto;
   align-items: center;
 }
 
-@media only screen and (min-width: 620px) {
+@media only screen and (max-width: 620px) {
   .container {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -23,10 +23,23 @@
   justify-content: space-around;
 }
 
+@media only screen and (max-width: 620px) {
+  .table-row {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+}
+
 .table-item {
   width: 50%;
   padding: 0.5em 0.5em;
   word-wrap: break-word;
+}
+
+@media only screen and (max-width: 620px) {
+  .table-item {
+    width: 80%;
+  }
 }
 
 .table-first-item {

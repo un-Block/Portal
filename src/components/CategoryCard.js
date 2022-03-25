@@ -25,7 +25,7 @@ export default function CategoryCard(props) {
 
     return (
         <div>
-            <p>{props.tag}</p>
+            <p className="tag">{props.tag}</p>
             <div className="table">
                 {
                     data.websites.map(item => {
