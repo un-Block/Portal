@@ -40,6 +40,9 @@
   .table-item {
     width: 80%;
   }
+  p.tag {
+    margin-left: 1em;
+  }
 }
 
 .table-first-item {
