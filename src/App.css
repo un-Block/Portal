@@ -1,8 +1,14 @@
 .container {
   display: block;
-  width: 80%;
+  width: 100%;
   margin: 2em auto;
   align-items: center;
+}
+
+@media only screen and (min-width: 620px) {
+  .container {
+    width: 80%;
+  }
 }
 
 .table {
