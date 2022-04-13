@@ -1,13 +1,10 @@
-import {
-    useQuery,
-    gql
-} from "@apollo/client";
+import {gql, useQuery} from "@apollo/client";
 import WebsiteCard from './WebsiteCard.js';
 
 
 const queryWebsitesByTag = gql`
 query GetWebsiteByTag($tag: [Tags!]) {
-  websites(where: { tag: $tag }) {
+  websites(where: { tag_contains_all: $tag }) {
     name,
     intro,
     url
@@ -16,8 +13,9 @@ query GetWebsiteByTag($tag: [Tags!]) {
 `
 
 export default function CategoryCard(props) {
+    console.log(props.tag)
     const { loading, error, data } = useQuery(queryWebsitesByTag, {
-        variables: { tag: [props.tag] }
+        variables: {tag: props.tag}
     });
     if (loading) return null;
     if (error) return `Error! ${error}`;
@@ -25,11 +23,12 @@ export default function CategoryCard(props) {
 
     return (
         <div>
-            <p className="tag">{props.tag}</p>
+            <p className="tag">{props.tag.join(", ")}</p>
             <div className="table">
                 {
                     data.websites.map(item => {
-                        return <WebsiteCard key={item.name} url={item.url} name={item.name} intro={item.intro}></WebsiteCard>
+                        return <WebsiteCard key={item.name} url={item.url} name={item.name}
+                                            intro={item.intro}></WebsiteCard>
                     })
                 }
             </div>
