@@ -72,11 +72,10 @@ function App() {
                     tagSelectedState.includes(true) ?
                         <CategoryCard key="multiple" tag={data.__type.enumValues.filter((tag, index) =>
                             tagSelectedState[index]
-                        ).map(value => value.name)}></CategoryCard> : null
+                        ).map(value => value.name)}></CategoryCard> : sortedTags.map((tag) => (
+                            <CategoryCard key={tag} tag={[tag]}></CategoryCard>
+                        ))
                 }
-                {sortedTags.map((tag) => (
-                    <CategoryCard key={tag} tag={[tag]}></CategoryCard>
-                ))}
                 {/*{data.__type.enumValues.map((item) => {*/}
                 {/*    if (!sortedTags.includes(item.name)) {*/}
                 {/*        return (*/}
